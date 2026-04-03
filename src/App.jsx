@@ -9,22 +9,11 @@ import './index.css'
 function App() {
   const [activePanel, setActivePanel] = useState('command')
   const [currentTime, setCurrentTime] = useState(new Date())
-  const [agentStatus, setAgentStatus] = useState('online') // online | busy | offline
+  const [agentStatus] = useState('online') // online | busy | offline
 
   useEffect(() => {
     const timer = setInterval(() => setCurrentTime(new Date()), 1000)
     return () => clearInterval(timer)
-  }, [])
-
-  // Simulate agent status changes
-  useEffect(() => {
-    const statuses = ['online', 'busy', 'online', 'online', 'busy']
-    let i = 0
-    const interval = setInterval(() => {
-      i = (i + 1) % statuses.length
-      setAgentStatus(statuses[i])
-    }, 15000)
-    return () => clearInterval(interval)
   }, [])
 
   const panelTitles = {

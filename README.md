@@ -52,12 +52,25 @@ See `docs/` for the full project package:
 - `WORKSPACE_LINK_PLAN.md`
 - `DEPLOYMENT_PLAN.md`
 - `GITHUB_PUBLISHING_CHECKLIST.md`
+- `KNOWN_ISSUES.md`
 
 ## Local development
+Install once:
 ```bash
 npm install
+```
+
+Run backend bridge:
+```bash
+npm run dev:server
+```
+
+Run frontend:
+```bash
 npm run dev
 ```
+
+The frontend expects the backend bridge on `http://localhost:8787` during development.
 
 ## Build
 ```bash
@@ -67,5 +80,7 @@ npm run preview
 
 ## Publishing status
 - Project reviewed and documented inside workspace
-- Ready for GitHub repo creation
+- Backend bridge scaffold added
+- Real session list + history integration added to Command Center
+- Session send route added (legacy sessions with old model refs may still need config cleanup)
 - Ready for Vercel deployment setup after token handoff
