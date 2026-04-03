@@ -1,0 +1,71 @@
+# AbdosClaw Dashboard
+
+Mission-control dashboard for OpenClaw.
+
+## Current state
+This project is currently a **frontend prototype** built with React + Vite.
+It already has a strong visual shell and 3 panel concepts:
+- **Command Center** — intended for live agent status, chat, sessions, logs, costs, and quick actions
+- **The Forge** — intended for generation queue / media pipeline operations
+- **The Hangar** — intended for project portfolio / links / infrastructure overview
+
+Right now the app is mostly **mocked UI**:
+- simulated agent status
+- simulated activity logs
+- static queue data
+- static project cards
+- no backend bridge yet
+- no real OpenClaw session integration yet
+
+## Goal
+Turn this into a real dashboard that can:
+- list OpenClaw sessions
+- open conversation history
+- send messages into selected sessions
+- monitor subagents and task runs
+- expose higher-level controls safely through a backend bridge
+
+## Recommended architecture
+Do **not** connect the React frontend directly to OpenClaw secrets/auth.
+
+Use this structure instead:
+- **Frontend (React/Vite)**
+- **Backend bridge (Node/Express or similar)**
+- **OpenClaw runtime / Gateway**
+
+Frontend → Backend bridge → OpenClaw
+
+## Planned milestones
+1. Replace mocked Command Center data with real session data
+2. Add backend API bridge for sessions/history/send/spawn
+3. Add live multi-session chat UI
+4. Add project/service status cards backed by real data
+5. Add deployment pipeline (GitHub + Vercel frontend)
+6. Add secure workspace/OpenClaw linking config
+
+## Docs
+See `docs/` for the full project package:
+- `PROJECT_OVERVIEW.md`
+- `ARCHITECTURE.md`
+- `API_CONTRACT.md`
+- `SESSION_UI_MODEL.md`
+- `WORKSPACE_LINK_PLAN.md`
+- `DEPLOYMENT_PLAN.md`
+- `GITHUB_PUBLISHING_CHECKLIST.md`
+
+## Local development
+```bash
+npm install
+npm run dev
+```
+
+## Build
+```bash
+npm run build
+npm run preview
+```
+
+## Publishing status
+- Project reviewed and documented inside workspace
+- Ready for GitHub repo creation
+- Ready for Vercel deployment setup after token handoff
