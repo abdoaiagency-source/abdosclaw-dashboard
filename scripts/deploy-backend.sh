@@ -26,7 +26,7 @@ echo "[deploy] Building frontend..."
 npm run build
 
 echo "[deploy] Restarting PM2 app..."
-pm2 startOrReload ecosystem.config.cjs --only "$PM2_APP_NAME"
+ABDOSCLAW_APP_DIR="$APP_DIR" pm2 startOrReload ecosystem.config.cjs --only "$PM2_APP_NAME"
 pm2 save
 
 echo "[deploy] Done."

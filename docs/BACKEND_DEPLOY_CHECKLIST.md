@@ -25,7 +25,7 @@ DASHBOARD_ENABLE_WRITE=false
 cd /opt/abdosclaw-dashboard
 npm ci
 npm run build
-pm2 start ecosystem.config.cjs
+ABDOSCLAW_APP_DIR=/opt/abdosclaw-dashboard pm2 start ecosystem.config.cjs
 pm2 save
 ```
 
