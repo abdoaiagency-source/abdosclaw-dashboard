@@ -55,6 +55,11 @@ See `docs/` for the full project package:
 - `KNOWN_ISSUES.md`
 - `SECURITY.md`
 - `STATUS_HANDOFF.md` (includes the current active context and resume-from-here steps)
+- `MIGRATION_PLAN.md`
+- `MIGRATION_CHECKLIST.md`
+- `MIGRATION_STATE_MAP.md`
+- `RECOVERY_RUNBOOK.md`
+- `PORTABILITY_STRATEGY.md`
 
 ## Local development
 Install once:
@@ -92,3 +97,4 @@ npm run preview
 - Vercel frontend config added
 - Auto-deploy pipeline test commit applied
 - Auto-deploy retry after SSH user correction
+- Migration pack added (plan, checklist, state map, recovery runbook, export/restore scripts)

@@ -71,3 +71,9 @@ Configure these repository secrets:
 
 ## Handoff note
 See `docs/STATUS_HANDOFF.md` for the latest known deployment state, blockers, and next steps.
+See also the migration pack:
+- `docs/MIGRATION_PLAN.md`
+- `docs/MIGRATION_CHECKLIST.md`
+- `docs/MIGRATION_STATE_MAP.md`
+- `docs/RECOVERY_RUNBOOK.md`
+- `docs/PORTABILITY_STRATEGY.md`

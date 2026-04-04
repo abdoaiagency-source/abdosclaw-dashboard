@@ -11,6 +11,7 @@ The active project context is **AbdosClaw Dashboard deployment and integration**
 - the current blocker is **GitHub Actions backend auto-deploy SSH authentication**
 - public API exposure via `api.abdrhmane.com` is not finished yet
 - `write/send` remains intentionally disabled until public API + auth + end-to-end checks are complete
+- migration readiness has now been documented and scaffolded inside the repo
 
 ### Current blocker
 The remaining blocker is:
