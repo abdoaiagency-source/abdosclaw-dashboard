@@ -68,3 +68,6 @@ Configure these repository secrets:
 - send message works
 - no secrets are exposed client-side
 - CORS is correctly restricted
+
+## Handoff note
+See `docs/STATUS_HANDOFF.md` for the latest known deployment state, blockers, and next steps.

@@ -54,6 +54,7 @@ See `docs/` for the full project package:
 - `GITHUB_PUBLISHING_CHECKLIST.md`
 - `KNOWN_ISSUES.md`
 - `SECURITY.md`
+- `STATUS_HANDOFF.md`
 
 ## Local development
 Install once:
