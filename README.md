@@ -53,6 +53,7 @@ See `docs/` for the full project package:
 - `DEPLOYMENT_PLAN.md`
 - `GITHUB_PUBLISHING_CHECKLIST.md`
 - `KNOWN_ISSUES.md`
+- `SECURITY.md`
 
 ## Local development
 Install once:
@@ -71,6 +72,8 @@ npm run dev
 ```
 
 The frontend expects the backend bridge on `http://localhost:8787` during development.
+For protected environments, set `DASHBOARD_API_TOKEN` on the backend and `VITE_DASHBOARD_API_TOKEN` on the frontend.
+Write/send actions are disabled by default until `DASHBOARD_ENABLE_WRITE=true` is set on the backend.
 
 ## Build
 ```bash

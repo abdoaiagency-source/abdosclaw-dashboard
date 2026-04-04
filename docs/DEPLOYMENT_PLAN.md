@@ -20,8 +20,14 @@ Deploy on the **existing VPS/OpenClaw host** or another controlled server.
 2. Import project into Vercel
 3. Set frontend env vars:
    - `VITE_API_BASE_URL`
+   - `VITE_DASHBOARD_API_TOKEN`
 4. Deploy previews on every push
 5. Promote production after API bridge is live
+
+## Backend bridge env
+- `CORS_ORIGIN` should be set to the exact frontend domain(s)
+- `DASHBOARD_API_TOKEN` should be set before any public exposure
+- `DASHBOARD_ENABLE_WRITE=true` only when you are ready to allow live sends
 
 ## Backend bridge plan
 1. Create `server/` app
