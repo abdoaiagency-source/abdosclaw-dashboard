@@ -1,21 +1,20 @@
 # Known Issues
 
-## 1. Legacy session model references can block send actions
-Some older OpenClaw sessions in this environment still carry legacy model references such as:
-- `openai-codex:default`
-- fallback names that no longer resolve cleanly
+## 1. Some old sessions may still need override hydration
+Older OpenClaw sessions may be missing persisted `providerOverride` / `modelOverride` values even when they already have `model` and `modelProvider` recorded.
 
-### Symptom
-`POST /api/sessions/:sessionKey/send` may fail for those older sessions with a model-switch or unknown-model error.
+### Current handling
+The backend bridge now self-heals this case for send actions by persisting session overrides before calling `openclaw agent --session-id ...`.
 
-### What still works
+### What now works
 - session listing
 - session history reading
 - backend bridge startup
 - frontend dashboard rendering
+- send actions for sessions that have `model` and `modelProvider` but were missing overrides
 
-### Recommended fix
-Clean the stale model config and legacy fallback warnings in the main OpenClaw environment so live-session sends reuse valid model references.
+### Remaining edge case
+Very old sessions with missing session file or incomplete metadata may still require manual cleanup or a fresh session.
 
 ## 2. Forge and Hangar remain mostly presentation-first
 The current implementation work focused on the highest-value path:

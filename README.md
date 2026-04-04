@@ -82,5 +82,5 @@ npm run preview
 - Project reviewed and documented inside workspace
 - Backend bridge scaffold added
 - Real session list + history integration added to Command Center
-- Session send route added (legacy sessions with old model refs may still need config cleanup)
+- Session send route added and hardened for older session metadata
 - Ready for Vercel deployment setup after token handoff

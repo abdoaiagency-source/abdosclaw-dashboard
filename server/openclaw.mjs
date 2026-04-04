@@ -76,6 +76,35 @@ export async function getSessionMetaByKey(sessionKey) {
   return entry
 }
 
+async function writeSessionsIndex(index) {
+  await fs.writeFile(SESSIONS_INDEX, JSON.stringify(index, null, 2))
+}
+
+async function ensureSessionOverrides(sessionKey) {
+  const index = await getSessionsIndex()
+  const entry = index[sessionKey]
+  if (!entry) return null
+
+  const providerOverride = typeof entry.providerOverride === 'string' ? entry.providerOverride.trim() : ''
+  const modelOverride = typeof entry.modelOverride === 'string' ? entry.modelOverride.trim() : ''
+  const modelProvider = typeof entry.modelProvider === 'string' ? entry.modelProvider.trim() : ''
+  const model = typeof entry.model === 'string' ? entry.model.trim() : ''
+
+  if (providerOverride || modelOverride) {
+    return entry
+  }
+
+  if (!modelProvider || !model) {
+    return entry
+  }
+
+  entry.providerOverride = modelProvider
+  entry.modelOverride = model
+  index[sessionKey] = entry
+  await writeSessionsIndex(index)
+  return entry
+}
+
 export async function getSessionHistory(sessionKey, limit = 100) {
   const meta = await getSessionMetaByKey(sessionKey)
   if (!meta?.sessionFile) {
@@ -122,7 +151,7 @@ export async function getSessionHistory(sessionKey, limit = 100) {
 }
 
 export async function sendMessageToSession(sessionKey, message) {
-  const meta = await getSessionMetaByKey(sessionKey)
+  const meta = await ensureSessionOverrides(sessionKey)
   if (!meta?.sessionId) {
     throw new Error(`Session not found: ${sessionKey}`)
   }
