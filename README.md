@@ -54,7 +54,7 @@ See `docs/` for the full project package:
 - `GITHUB_PUBLISHING_CHECKLIST.md`
 - `KNOWN_ISSUES.md`
 - `SECURITY.md`
-- `STATUS_HANDOFF.md`
+- `STATUS_HANDOFF.md` (includes the current active context and resume-from-here steps)
 
 ## Local development
 Install once:

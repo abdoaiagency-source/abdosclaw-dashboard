@@ -2,6 +2,30 @@
 
 _Last updated: 2026-04-04_
 
+## Active Context
+The active project context is **AbdosClaw Dashboard deployment and integration**.
+
+### Current focus
+- frontend is already on GitHub and intended for Vercel
+- backend bridge is already deployed locally on the VPS and managed by PM2
+- the current blocker is **GitHub Actions backend auto-deploy SSH authentication**
+- public API exposure via `api.abdrhmane.com` is not finished yet
+- `write/send` remains intentionally disabled until public API + auth + end-to-end checks are complete
+
+### Current blocker
+The remaining blocker is:
+- `VPS_SSH_KEY` does not match the actual SSH private key accepted by the VPS host for `root@187.77.100.95`
+
+### Resume-from-here steps
+1. fix `VPS_SSH_KEY`
+2. rerun GitHub backend auto-deploy
+3. install/configure `nginx` + `certbot` on VPS host
+4. connect `api.abdrhmane.com` → `127.0.0.1:8787`
+5. issue SSL certificate
+6. set Vercel env vars
+7. test frontend → backend end-to-end
+8. only then consider enabling `DASHBOARD_ENABLE_WRITE=true`
+
 ## Repo
 - GitHub: `abdoaiagency-source/abdosclaw-dashboard`
 - Frontend deployment target: Vercel (manual Git integration already chosen by owner)
