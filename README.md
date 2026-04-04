@@ -90,3 +90,4 @@ npm run preview
 - GitHub Actions backend auto-deploy workflow added
 - Vercel frontend config added
 - Auto-deploy pipeline test commit applied
+- Auto-deploy retry after SSH user correction
