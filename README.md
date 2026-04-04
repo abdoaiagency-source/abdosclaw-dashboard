@@ -86,4 +86,6 @@ npm run preview
 - Backend bridge scaffold added
 - Real session list + history integration added to Command Center
 - Session send route added and hardened for older session metadata
-- Ready for Vercel deployment setup after token handoff
+- GitHub Actions CI added
+- GitHub Actions backend auto-deploy workflow added
+- Vercel frontend config added

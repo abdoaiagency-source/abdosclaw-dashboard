@@ -3,6 +3,13 @@
 ## Goal
 Deploy the dashboard safely and make it ready for iterative improvement.
 
+## Auto-deploy model
+### Frontend
+Use **Vercel Git integration** so every push to `main` auto-deploys the frontend.
+
+### Backend bridge
+Use **GitHub Actions** to SSH into the VPS and run the backend deploy script on every push to `main`.
+
 ## Recommended deployment model
 ### Frontend
 Deploy to **Vercel** for fast preview builds and easy iterations.
@@ -36,6 +43,16 @@ Deploy on the **existing VPS/OpenClaw host** or another controlled server.
 4. Restrict CORS to your frontend domain
 5. Deploy on VPS
 6. Add health endpoint
+7. Add `pm2` process management
+8. Add GitHub Action workflow to pull and restart on push
+
+## GitHub Actions backend secrets
+Configure these repository secrets:
+- `VPS_HOST`
+- `VPS_PORT`
+- `VPS_USER`
+- `VPS_SSH_KEY`
+- `APP_DIR`
 
 ## Pre-deploy checklist
 - README updated

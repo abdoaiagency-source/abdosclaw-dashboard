@@ -35,3 +35,5 @@
 - push main
 - verify README rendering
 - connect Vercel to repo
+- add GitHub Actions secrets for backend auto-deploy
+- verify Actions tab shows CI and deploy workflows
